@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1089E7D1224072E70053DD02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E7D0224072E70053DD02 /* AppDelegate.m */; };
+		1089E7D4224072E70053DD02 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E7D3224072E70053DD02 /* ViewController.m */; };
+		1089E7D7224072E70053DD02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1089E7D5224072E70053DD02 /* Main.storyboard */; };
+		1089E7D9224072E90053DD02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1089E7D8224072E90053DD02 /* Assets.xcassets */; };
+		1089E7DC224072E90053DD02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1089E7DA224072E90053DD02 /* LaunchScreen.storyboard */; };
+		1089E7DF224072E90053DD02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E7DE224072E90053DD02 /* main.m */; };
+		1089E7E92240757D0053DD02 /* SZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E7E82240757D0053DD02 /* SZBaseViewController.m */; };
+		1089E7EC224075890053DD02 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E7EB224075890053DD02 /* HomePageViewController.m */; };
+		1089E7F42240828A0053DD02 /* SZKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1089E7F2224082330053DD02 /* SZKit.framework */; };
+		1089E7F52240828A0053DD02 /* SZKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1089E7F2224082330053DD02 /* SZKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1089E7F9224082CA0053DD02 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1089E7F7224082AE0053DD02 /* SVProgressHUD.framework */; };
+		1089E7FA224082CA0053DD02 /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1089E7F7224082AE0053DD02 /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1089E8002240889E0053DD02 /* HomePageSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E7FF2240889E0053DD02 /* HomePageSectionHeaderView.m */; };
+		1089E80322408AD20053DD02 /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E80222408AD20053DD02 /* HomePageTableViewCell.m */; };
+		1089E80622408B610053DD02 /* SZUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E80522408B610053DD02 /* SZUserDefaults.m */; };
+		1089E80A224098940053DD02 /* SZMoneyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E809224098940053DD02 /* SZMoneyModel.m */; };
+		318FB4EC39F7036FB99B1B72 /* libPods-SZMoneyManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3722ECAA005D02B3172582F /* libPods-SZMoneyManager.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1089E7F62240828A0053DD02 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1089E7FA224082CA0053DD02 /* SVProgressHUD.framework in Embed Frameworks */,
+				1089E7F52240828A0053DD02 /* SZKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1089E7CC224072E70053DD02 /* SZMoneyManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SZMoneyManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1089E7CF224072E70053DD02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1089E7D0224072E70053DD02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1089E7D2224072E70053DD02 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1089E7D3224072E70053DD02 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1089E7D6224072E70053DD02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1089E7D8224072E90053DD02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1089E7DB224072E90053DD02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1089E7DD224072E90053DD02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1089E7DE224072E90053DD02 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1089E7E72240757D0053DD02 /* SZBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SZBaseViewController.h; sourceTree = "<group>"; };
+		1089E7E82240757D0053DD02 /* SZBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZBaseViewController.m; sourceTree = "<group>"; };
+		1089E7EA224075890053DD02 /* HomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		1089E7EB224075890053DD02 /* HomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
+		1089E7EF22407BCB0053DD02 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		1089E7F022407C1F0053DD02 /* GlobalDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalDefine.h; sourceTree = "<group>"; };
+		1089E7F2224082330053DD02 /* SZKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SZKit.framework; path = Carthage/Build/iOS/SZKit.framework; sourceTree = "<group>"; };
+		1089E7F7224082AE0053DD02 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		1089E7FE2240889E0053DD02 /* HomePageSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageSectionHeaderView.h; sourceTree = "<group>"; };
+		1089E7FF2240889E0053DD02 /* HomePageSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageSectionHeaderView.m; sourceTree = "<group>"; };
+		1089E80122408AD20053DD02 /* HomePageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewCell.h; sourceTree = "<group>"; };
+		1089E80222408AD20053DD02 /* HomePageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewCell.m; sourceTree = "<group>"; };
+		1089E80422408B610053DD02 /* SZUserDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SZUserDefaults.h; sourceTree = "<group>"; };
+		1089E80522408B610053DD02 /* SZUserDefaults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZUserDefaults.m; sourceTree = "<group>"; };
+		1089E808224098940053DD02 /* SZMoneyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SZMoneyModel.h; sourceTree = "<group>"; };
+		1089E809224098940053DD02 /* SZMoneyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZMoneyModel.m; sourceTree = "<group>"; };
+		1A09029BC9326F89F06711DA /* Pods-SZMoneyManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SZMoneyManager.release.xcconfig"; path = "Target Support Files/Pods-SZMoneyManager/Pods-SZMoneyManager.release.xcconfig"; sourceTree = "<group>"; };
+		B3722ECAA005D02B3172582F /* libPods-SZMoneyManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SZMoneyManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F04A6AC21E32817C9CECF9A5 /* Pods-SZMoneyManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SZMoneyManager.debug.xcconfig"; path = "Target Support Files/Pods-SZMoneyManager/Pods-SZMoneyManager.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1089E7C9224072E70053DD02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1089E7F9224082CA0053DD02 /* SVProgressHUD.framework in Frameworks */,
+				1089E7F42240828A0053DD02 /* SZKit.framework in Frameworks */,
+				318FB4EC39F7036FB99B1B72 /* libPods-SZMoneyManager.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E874533A612750199EE2467 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1089E7F7224082AE0053DD02 /* SVProgressHUD.framework */,
+				1089E7F2224082330053DD02 /* SZKit.framework */,
+				B3722ECAA005D02B3172582F /* libPods-SZMoneyManager.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1089E7C3224072E70053DD02 = {
+			isa = PBXGroup;
+			children = (
+				1089E7CE224072E70053DD02 /* SZMoneyManager */,
+				1089E7CD224072E70053DD02 /* Products */,
+				14DC01780090763FDC289FD1 /* Pods */,
+				0E874533A612750199EE2467 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1089E7CD224072E70053DD02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1089E7CC224072E70053DD02 /* SZMoneyManager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1089E7CE224072E70053DD02 /* SZMoneyManager */ = {
+			isa = PBXGroup;
+			children = (
+				1089E7E5224074C50053DD02 /* Base */,
+				1089E7E6224074CB0053DD02 /* Main */,
+				1089E7CF224072E70053DD02 /* AppDelegate.h */,
+				1089E7D0224072E70053DD02 /* AppDelegate.m */,
+				1089E7D2224072E70053DD02 /* ViewController.h */,
+				1089E7D3224072E70053DD02 /* ViewController.m */,
+				1089E7D5224072E70053DD02 /* Main.storyboard */,
+				1089E7D8224072E90053DD02 /* Assets.xcassets */,
+				1089E7DA224072E90053DD02 /* LaunchScreen.storyboard */,
+				1089E7DD224072E90053DD02 /* Info.plist */,
+				1089E7DE224072E90053DD02 /* main.m */,
+			);
+			path = SZMoneyManager;
+			sourceTree = "<group>";
+		};
+		1089E7E5224074C50053DD02 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				1089E7EE22407BBA0053DD02 /* Global */,
+				1089E7ED22407BB10053DD02 /* Controller */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		1089E7E6224074CB0053DD02 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1089E7FB224088660053DD02 /* HomePage(主页) */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1089E7ED22407BB10053DD02 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1089E7E72240757D0053DD02 /* SZBaseViewController.h */,
+				1089E7E82240757D0053DD02 /* SZBaseViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1089E7EE22407BBA0053DD02 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				1089E7EF22407BCB0053DD02 /* PrefixHeader.pch */,
+				1089E7F022407C1F0053DD02 /* GlobalDefine.h */,
+				1089E80422408B610053DD02 /* SZUserDefaults.h */,
+				1089E80522408B610053DD02 /* SZUserDefaults.m */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		1089E7FB224088660053DD02 /* HomePage(主页) */ = {
+			isa = PBXGroup;
+			children = (
+				1089E807224098680053DD02 /* Model */,
+				1089E7FD224088790053DD02 /* View */,
+				1089E7FC224088720053DD02 /* Controller */,
+			);
+			path = "HomePage(主页)";
+			sourceTree = "<group>";
+		};
+		1089E7FC224088720053DD02 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1089E7EA224075890053DD02 /* HomePageViewController.h */,
+				1089E7EB224075890053DD02 /* HomePageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1089E7FD224088790053DD02 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1089E7FE2240889E0053DD02 /* HomePageSectionHeaderView.h */,
+				1089E7FF2240889E0053DD02 /* HomePageSectionHeaderView.m */,
+				1089E80122408AD20053DD02 /* HomePageTableViewCell.h */,
+				1089E80222408AD20053DD02 /* HomePageTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1089E807224098680053DD02 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1089E808224098940053DD02 /* SZMoneyModel.h */,
+				1089E809224098940053DD02 /* SZMoneyModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14DC01780090763FDC289FD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F04A6AC21E32817C9CECF9A5 /* Pods-SZMoneyManager.debug.xcconfig */,
+				1A09029BC9326F89F06711DA /* Pods-SZMoneyManager.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1089E7CB224072E70053DD02 /* SZMoneyManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1089E7E2224072E90053DD02 /* Build configuration list for PBXNativeTarget "SZMoneyManager" */;
+			buildPhases = (
+				41524869BA7E3B72E89C2845 /* [CP] Check Pods Manifest.lock */,
+				1089E7C8224072E70053DD02 /* Sources */,
+				1089E7C9224072E70053DD02 /* Frameworks */,
+				1089E7CA224072E70053DD02 /* Resources */,
+				E5825EECF4A7F04503C88501 /* [CP] Copy Pods Resources */,
+				1089E7F12240820D0053DD02 /* ShellScript */,
+				1089E7F62240828A0053DD02 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SZMoneyManager;
+			productName = SZMoneyManager;
+			productReference = 1089E7CC224072E70053DD02 /* SZMoneyManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1089E7C4224072E70053DD02 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "张杰华";
+				TargetAttributes = {
+					1089E7CB224072E70053DD02 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 1089E7C7224072E70053DD02 /* Build configuration list for PBXProject "SZMoneyManager" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1089E7C3224072E70053DD02;
+			productRefGroup = 1089E7CD224072E70053DD02 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1089E7CB224072E70053DD02 /* SZMoneyManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1089E7CA224072E70053DD02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1089E7DC224072E90053DD02 /* LaunchScreen.storyboard in Resources */,
+				1089E7D9224072E90053DD02 /* Assets.xcassets in Resources */,
+				1089E7D7224072E70053DD02 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1089E7F12240820D0053DD02 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SZKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		41524869BA7E3B72E89C2845 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SZMoneyManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5825EECF4A7F04503C88501 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SZMoneyManager/Pods-SZMoneyManager-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/PGDatePicker/PGDatePicker/PGDatePicker.bundle",
+				"${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PGDatePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TZImagePickerController.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SZMoneyManager/Pods-SZMoneyManager-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1089E7C8224072E70053DD02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1089E7E92240757D0053DD02 /* SZBaseViewController.m in Sources */,
+				1089E8002240889E0053DD02 /* HomePageSectionHeaderView.m in Sources */,
+				1089E7D4224072E70053DD02 /* ViewController.m in Sources */,
+				1089E7EC224075890053DD02 /* HomePageViewController.m in Sources */,
+				1089E80A224098940053DD02 /* SZMoneyModel.m in Sources */,
+				1089E7DF224072E90053DD02 /* main.m in Sources */,
+				1089E80322408AD20053DD02 /* HomePageTableViewCell.m in Sources */,
+				1089E7D1224072E70053DD02 /* AppDelegate.m in Sources */,
+				1089E80622408B610053DD02 /* SZUserDefaults.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1089E7D5224072E70053DD02 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1089E7D6224072E70053DD02 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1089E7DA224072E90053DD02 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1089E7DB224072E90053DD02 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1089E7E0224072E90053DD02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1089E7E1224072E90053DD02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1089E7E3224072E90053DD02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F04A6AC21E32817C9CECF9A5 /* Pods-SZMoneyManager.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZGE7A98KCX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SZMoneyManager/Base/Global/PrefixHeader.pch";
+				INFOPLIST_FILE = SZMoneyManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nenglong.SZMoneyManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1089E7E4224072E90053DD02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A09029BC9326F89F06711DA /* Pods-SZMoneyManager.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZGE7A98KCX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SZMoneyManager/Base/Global/PrefixHeader.pch";
+				INFOPLIST_FILE = SZMoneyManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nenglong.SZMoneyManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1089E7C7224072E70053DD02 /* Build configuration list for PBXProject "SZMoneyManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1089E7E0224072E90053DD02 /* Debug */,
+				1089E7E1224072E90053DD02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1089E7E2224072E90053DD02 /* Build configuration list for PBXNativeTarget "SZMoneyManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1089E7E3224072E90053DD02 /* Debug */,
+				1089E7E4224072E90053DD02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1089E7C4224072E70053DD02 /* Project object */;
+}

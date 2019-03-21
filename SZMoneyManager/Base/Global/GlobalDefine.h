@@ -11,7 +11,7 @@
 
 //颜色定义
 #define YEBThemeColor               SZ_HEXCOLOR(0x38b58a)
-#define DefaultThemeColor           [UINavigationBar appearance].barTintColor
+#define DefaultThemeColor           Default75Color
 #define DefaultTitleColor           [UIColor blackColor]
 #define Default44Color              SZCurrentUserDefaults().YEB44Color
 #define Default75Color              SZCurrentUserDefaults().YEB75Color

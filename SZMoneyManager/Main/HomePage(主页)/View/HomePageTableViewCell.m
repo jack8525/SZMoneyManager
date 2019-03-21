@@ -8,6 +8,13 @@
 
 #import "HomePageTableViewCell.h"
 
+@interface HomePageTableViewCell ()
+
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *costLabel;
+
+@end
+
 @implementation HomePageTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -28,11 +35,13 @@
         UILabel *titleLabel = [[UILabel alloc]init];
         titleLabel.textColor = Default75Color;
         [bgView addSubview:titleLabel];
+        self.titleLabel = titleLabel;
 
         UILabel *costLabel = [[UILabel alloc]init];
         costLabel.textColor = Default75Color;
         costLabel.textAlignment = NSTextAlignmentRight;
         [bgView addSubview:costLabel];
+        self.costLabel = costLabel;
 
         [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(bgView).offset(10);
@@ -43,17 +52,15 @@
             make.top.left.bottom.equalTo(bgView);
             make.right.equalTo(bgView).offset(-10);
         }];
-
-        titleLabel.text = @"早餐";
-        costLabel.text = @"- 9.4";
     }
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setModel:(SZMoneyModel *)model
+{
+    _model = model;
+    _titleLabel.text = model.title;
+    _costLabel.text = [NSString stringWithFormat:@"%.2f",model.cost];
 }
 
 @end

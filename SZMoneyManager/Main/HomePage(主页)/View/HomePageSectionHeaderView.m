@@ -7,6 +7,13 @@
 //
 
 #import "HomePageSectionHeaderView.h"
+#import <YYKit.h>
+
+@interface HomePageSectionHeaderView ()
+
+@property (nonatomic, strong) UILabel *titleLabel;
+
+@end
 
 @implementation HomePageSectionHeaderView
 
@@ -20,6 +27,7 @@
         UILabel *titleLabel = [[UILabel alloc]init];
         titleLabel.textColor = Default75Color;
         [bgView addSubview:titleLabel];
+        self.titleLabel = titleLabel;
 
         UIView *line = [[UIView alloc]init];
         line.backgroundColor = Default75Color;
@@ -41,9 +49,16 @@
             make.height.equalTo(@0.5);
         }];
 
-        titleLabel.text = @"03/19 周二";
     }
     return self;
+}
+
+- (void)setSectionModel:(SZMoneySectionModel *)sectionModel
+{
+    _sectionModel = sectionModel;
+    NSDate *date = [SZCurrentUserDefaults().dateFormatter dateFromString:sectionModel.insertTime];
+    _titleLabel.text = [NSString stringWithFormat:@"%ld/%ld %@",date.month,date.day,sectionModel.weekDayC];
+
 }
 
 @end

@@ -23,6 +23,18 @@
 		1089E80322408AD20053DD02 /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E80222408AD20053DD02 /* HomePageTableViewCell.m */; };
 		1089E80622408B610053DD02 /* SZUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E80522408B610053DD02 /* SZUserDefaults.m */; };
 		1089E80A224098940053DD02 /* SZMoneyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E809224098940053DD02 /* SZMoneyModel.m */; };
+		1089E80F2240C5050053DD02 /* MoneyAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E80E2240C5050053DD02 /* MoneyAddViewController.m */; };
+		1089E8132240C7600053DD02 /* MoneyTypeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E8122240C7600053DD02 /* MoneyTypeCollectionViewCell.m */; };
+		1089E8182240CDEA0053DD02 /* SZInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E8172240CDEA0053DD02 /* SZInputView.m */; };
+		1089E81B2240CF670053DD02 /* SZInputBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E81A2240CF670053DD02 /* SZInputBarView.m */; };
+		1089E81F2241C3D50053DD02 /* SZCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E81E2241C3D50053DD02 /* SZCalendar.m */; };
+		1089E8222241C3F50053DD02 /* SZAlertBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E8212241C3F50053DD02 /* SZAlertBaseView.m */; };
+		1089E8262241C4DF0053DD02 /* NSObject+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E8252241C4DF0053DD02 /* NSObject+Category.m */; };
+		1089E8292241D4E70053DD02 /* SZMoneySectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E8282241D4E70053DD02 /* SZMoneySectionModel.m */; };
+		1089E82C2241D8F90053DD02 /* SZMoneyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E82B2241D8F90053DD02 /* SZMoneyManager.m */; };
+		1089E82F22420A590053DD02 /* HomePageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E82E22420A590053DD02 /* HomePageHeaderView.m */; };
+		1089E83222421AEC0053DD02 /* PGDatePickManager+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E83122421AEC0053DD02 /* PGDatePickManager+Category.m */; };
+		1089E8372242219A0053DD02 /* MoneyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E8362242219A0053DD02 /* MoneyDetailViewController.m */; };
 		318FB4EC39F7036FB99B1B72 /* libPods-SZMoneyManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3722ECAA005D02B3172582F /* libPods-SZMoneyManager.a */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +80,30 @@
 		1089E80522408B610053DD02 /* SZUserDefaults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZUserDefaults.m; sourceTree = "<group>"; };
 		1089E808224098940053DD02 /* SZMoneyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SZMoneyModel.h; sourceTree = "<group>"; };
 		1089E809224098940053DD02 /* SZMoneyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZMoneyModel.m; sourceTree = "<group>"; };
+		1089E80D2240C5050053DD02 /* MoneyAddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneyAddViewController.h; sourceTree = "<group>"; };
+		1089E80E2240C5050053DD02 /* MoneyAddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoneyAddViewController.m; sourceTree = "<group>"; };
+		1089E8112240C7600053DD02 /* MoneyTypeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneyTypeCollectionViewCell.h; sourceTree = "<group>"; };
+		1089E8122240C7600053DD02 /* MoneyTypeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoneyTypeCollectionViewCell.m; sourceTree = "<group>"; };
+		1089E8162240CDEA0053DD02 /* SZInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SZInputView.h; sourceTree = "<group>"; };
+		1089E8172240CDEA0053DD02 /* SZInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZInputView.m; sourceTree = "<group>"; };
+		1089E8192240CF670053DD02 /* SZInputBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SZInputBarView.h; sourceTree = "<group>"; };
+		1089E81A2240CF670053DD02 /* SZInputBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZInputBarView.m; sourceTree = "<group>"; };
+		1089E81D2241C3D50053DD02 /* SZCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SZCalendar.h; sourceTree = "<group>"; };
+		1089E81E2241C3D50053DD02 /* SZCalendar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZCalendar.m; sourceTree = "<group>"; };
+		1089E8202241C3F50053DD02 /* SZAlertBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SZAlertBaseView.h; sourceTree = "<group>"; };
+		1089E8212241C3F50053DD02 /* SZAlertBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZAlertBaseView.m; sourceTree = "<group>"; };
+		1089E8242241C4DF0053DD02 /* NSObject+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Category.h"; sourceTree = "<group>"; };
+		1089E8252241C4DF0053DD02 /* NSObject+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Category.m"; sourceTree = "<group>"; };
+		1089E8272241D4E70053DD02 /* SZMoneySectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SZMoneySectionModel.h; sourceTree = "<group>"; };
+		1089E8282241D4E70053DD02 /* SZMoneySectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZMoneySectionModel.m; sourceTree = "<group>"; };
+		1089E82A2241D8F90053DD02 /* SZMoneyManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SZMoneyManager.h; sourceTree = "<group>"; };
+		1089E82B2241D8F90053DD02 /* SZMoneyManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZMoneyManager.m; sourceTree = "<group>"; };
+		1089E82D22420A590053DD02 /* HomePageHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageHeaderView.h; sourceTree = "<group>"; };
+		1089E82E22420A590053DD02 /* HomePageHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageHeaderView.m; sourceTree = "<group>"; };
+		1089E83022421AEC0053DD02 /* PGDatePickManager+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PGDatePickManager+Category.h"; sourceTree = "<group>"; };
+		1089E83122421AEC0053DD02 /* PGDatePickManager+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PGDatePickManager+Category.m"; sourceTree = "<group>"; };
+		1089E8352242219A0053DD02 /* MoneyDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneyDetailViewController.h; sourceTree = "<group>"; };
+		1089E8362242219A0053DD02 /* MoneyDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoneyDetailViewController.m; sourceTree = "<group>"; };
 		1A09029BC9326F89F06711DA /* Pods-SZMoneyManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SZMoneyManager.release.xcconfig"; path = "Target Support Files/Pods-SZMoneyManager/Pods-SZMoneyManager.release.xcconfig"; sourceTree = "<group>"; };
 		B3722ECAA005D02B3172582F /* libPods-SZMoneyManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SZMoneyManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F04A6AC21E32817C9CECF9A5 /* Pods-SZMoneyManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SZMoneyManager.debug.xcconfig"; path = "Target Support Files/Pods-SZMoneyManager/Pods-SZMoneyManager.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +172,8 @@
 		1089E7E5224074C50053DD02 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				1089E8232241C4C80053DD02 /* Category */,
+				1089E81C2241C3C80053DD02 /* View */,
 				1089E7EE22407BBA0053DD02 /* Global */,
 				1089E7ED22407BB10053DD02 /* Controller */,
 			);
@@ -145,6 +183,9 @@
 		1089E7E6224074CB0053DD02 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				1089E833224221780053DD02 /* Detail(详情) */,
+				1089E8142240CD2A0053DD02 /* Edit(编辑) */,
+				1089E80B2240C4BF0053DD02 /* Add(添加) */,
 				1089E7FB224088660053DD02 /* HomePage(主页) */,
 			);
 			path = Main;
@@ -166,6 +207,8 @@
 				1089E7F022407C1F0053DD02 /* GlobalDefine.h */,
 				1089E80422408B610053DD02 /* SZUserDefaults.h */,
 				1089E80522408B610053DD02 /* SZUserDefaults.m */,
+				1089E82A2241D8F90053DD02 /* SZMoneyManager.h */,
+				1089E82B2241D8F90053DD02 /* SZMoneyManager.m */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -194,6 +237,8 @@
 			children = (
 				1089E7FE2240889E0053DD02 /* HomePageSectionHeaderView.h */,
 				1089E7FF2240889E0053DD02 /* HomePageSectionHeaderView.m */,
+				1089E82D22420A590053DD02 /* HomePageHeaderView.h */,
+				1089E82E22420A590053DD02 /* HomePageHeaderView.m */,
 				1089E80122408AD20053DD02 /* HomePageTableViewCell.h */,
 				1089E80222408AD20053DD02 /* HomePageTableViewCell.m */,
 			);
@@ -205,8 +250,95 @@
 			children = (
 				1089E808224098940053DD02 /* SZMoneyModel.h */,
 				1089E809224098940053DD02 /* SZMoneyModel.m */,
+				1089E8272241D4E70053DD02 /* SZMoneySectionModel.h */,
+				1089E8282241D4E70053DD02 /* SZMoneySectionModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1089E80B2240C4BF0053DD02 /* Add(添加) */ = {
+			isa = PBXGroup;
+			children = (
+				1089E8102240C74A0053DD02 /* View */,
+				1089E80C2240C4CB0053DD02 /* Controller */,
+			);
+			path = "Add(添加)";
+			sourceTree = "<group>";
+		};
+		1089E80C2240C4CB0053DD02 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1089E80D2240C5050053DD02 /* MoneyAddViewController.h */,
+				1089E80E2240C5050053DD02 /* MoneyAddViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1089E8102240C74A0053DD02 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1089E8112240C7600053DD02 /* MoneyTypeCollectionViewCell.h */,
+				1089E8122240C7600053DD02 /* MoneyTypeCollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1089E8142240CD2A0053DD02 /* Edit(编辑) */ = {
+			isa = PBXGroup;
+			children = (
+				1089E8152240CDC00053DD02 /* View */,
+			);
+			path = "Edit(编辑)";
+			sourceTree = "<group>";
+		};
+		1089E8152240CDC00053DD02 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1089E8162240CDEA0053DD02 /* SZInputView.h */,
+				1089E8172240CDEA0053DD02 /* SZInputView.m */,
+				1089E8192240CF670053DD02 /* SZInputBarView.h */,
+				1089E81A2240CF670053DD02 /* SZInputBarView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1089E81C2241C3C80053DD02 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1089E81D2241C3D50053DD02 /* SZCalendar.h */,
+				1089E81E2241C3D50053DD02 /* SZCalendar.m */,
+				1089E8202241C3F50053DD02 /* SZAlertBaseView.h */,
+				1089E8212241C3F50053DD02 /* SZAlertBaseView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1089E8232241C4C80053DD02 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1089E8242241C4DF0053DD02 /* NSObject+Category.h */,
+				1089E8252241C4DF0053DD02 /* NSObject+Category.m */,
+				1089E83022421AEC0053DD02 /* PGDatePickManager+Category.h */,
+				1089E83122421AEC0053DD02 /* PGDatePickManager+Category.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		1089E833224221780053DD02 /* Detail(详情) */ = {
+			isa = PBXGroup;
+			children = (
+				1089E834224221880053DD02 /* Controller */,
+			);
+			path = "Detail(详情)";
+			sourceTree = "<group>";
+		};
+		1089E834224221880053DD02 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1089E8352242219A0053DD02 /* MoneyDetailViewController.h */,
+				1089E8362242219A0053DD02 /* MoneyDetailViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		14DC01780090763FDC289FD1 /* Pods */ = {
@@ -365,14 +497,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				1089E7E92240757D0053DD02 /* SZBaseViewController.m in Sources */,
+				1089E8222241C3F50053DD02 /* SZAlertBaseView.m in Sources */,
+				1089E80F2240C5050053DD02 /* MoneyAddViewController.m in Sources */,
 				1089E8002240889E0053DD02 /* HomePageSectionHeaderView.m in Sources */,
+				1089E81B2240CF670053DD02 /* SZInputBarView.m in Sources */,
+				1089E82F22420A590053DD02 /* HomePageHeaderView.m in Sources */,
 				1089E7D4224072E70053DD02 /* ViewController.m in Sources */,
+				1089E8182240CDEA0053DD02 /* SZInputView.m in Sources */,
 				1089E7EC224075890053DD02 /* HomePageViewController.m in Sources */,
+				1089E8292241D4E70053DD02 /* SZMoneySectionModel.m in Sources */,
+				1089E8372242219A0053DD02 /* MoneyDetailViewController.m in Sources */,
 				1089E80A224098940053DD02 /* SZMoneyModel.m in Sources */,
+				1089E83222421AEC0053DD02 /* PGDatePickManager+Category.m in Sources */,
 				1089E7DF224072E90053DD02 /* main.m in Sources */,
+				1089E82C2241D8F90053DD02 /* SZMoneyManager.m in Sources */,
 				1089E80322408AD20053DD02 /* HomePageTableViewCell.m in Sources */,
+				1089E81F2241C3D50053DD02 /* SZCalendar.m in Sources */,
 				1089E7D1224072E70053DD02 /* AppDelegate.m in Sources */,
 				1089E80622408B610053DD02 /* SZUserDefaults.m in Sources */,
+				1089E8132240C7600053DD02 /* MoneyTypeCollectionViewCell.m in Sources */,
+				1089E8262241C4DF0053DD02 /* NSObject+Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

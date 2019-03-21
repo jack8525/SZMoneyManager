@@ -25,6 +25,22 @@ static dispatch_once_t onceToken;
     return standard;
 }
 
+- (NSDateFormatter *)dateFormatter
+{
+    if (!_dateFormatter) {
+        _dateFormatter = [NSDateFormatter sz_dateFormatterWithFormat:SZDateFormtyMd];
+    }
+    return _dateFormatter;
+}
+
+- (NSArray *)weekDayArray
+{
+    if (!_weekDayArray) {
+        _weekDayArray = @[@"周日",@"周一",@"周二",@"周三",@"周四",@"周五",@"周六"];
+    }
+    return _weekDayArray;
+}
+
 #pragma mark - 常用颜色
 -  (UIColor *)YEB44Color
 {

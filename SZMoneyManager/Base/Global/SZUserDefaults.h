@@ -19,5 +19,9 @@
 @property (nonatomic, strong) UIColor *YEBYellowColor;
 @property (nonatomic, strong) UIColor *YEBRedColor;
 
+//日期格式器
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
+@property (nonatomic, strong) NSArray *weekDayArray;
+
 SZUserDefaults *SZCurrentUserDefaults(void);
 @end

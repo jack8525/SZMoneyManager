@@ -56,7 +56,7 @@
 - (void)setSectionModel:(SZMoneySectionModel *)sectionModel
 {
     _sectionModel = sectionModel;
-    NSDate *date = [SZCurrentUserDefaults().dateFormatter dateFromString:sectionModel.insertTime];
+    NSDate *date = [SZCurrentUserDefaults().yMdDateFormatter dateFromString:sectionModel.insertTime];
     _titleLabel.text = [NSString stringWithFormat:@"%ld/%ld %@",date.month,date.day,sectionModel.weekDayC];
 
 }

@@ -9,17 +9,18 @@
 #import "HomePageViewController.h"
 #import "MoneyAddViewController.h"
 #import "MoneyDetailViewController.h"
+#import "MonthStatisticsViewController.h"
+#import "YearStatisticsViewController.h"
 #import "HomePageHeaderView.h"
 #import "HomePageSectionHeaderView.h"
 #import "HomePageTableViewCell.h"
-#import "SZMoneyModel.h"
-#import "SZMoneySectionModel.h"
 #import "PGDatePickManager+Category.h"
 #import <YYKit.h>
 
 @interface HomePageViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) NSMutableArray<SZMoneySectionModel *> *dataArray;
+@property (nonatomic, strong) NSArray<SZMoneyModel *> *monthModelArray;
 
 @property (nonatomic, strong) HomePageHeaderView *headerView;
 @property (nonatomic, strong) UITableView *tableView;
@@ -52,6 +53,7 @@
     [allModelArray sortUsingComparator:^NSComparisonResult(SZMoneyModel *obj1, SZMoneyModel *obj2) {
         return [obj1.insertTime compare:obj2.insertTime] == NSOrderedAscending;
     }];
+    _monthModelArray = allModelArray;
     //组成数据源
     [_dataArray removeAllObjects];
     for (NSInteger i = 0; i < allModelArray.count; i++) {
@@ -97,35 +99,24 @@
 {
     MoneyAddViewController *vc = [[MoneyAddViewController alloc]init];
     vc.sendBlock = ^(SZMoneyModel *model) {
-        NSArray<SZMoneySectionModel *> *resultArray = [self.dataArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"insertTime = %@",model.insertTime]];
-        if (resultArray.count > 0) {
-            [resultArray.firstObject.modelArray addObject:model];
-        }else{
-            //未有日期
-            SZMoneySectionModel *sectionModel = [[SZMoneySectionModel alloc]init];
-            sectionModel.insertTime = model.insertTime;
-            sectionModel.weekDayC = model.weekDayC;
-            [self.dataArray addObject:sectionModel];
-
-            [self.dataArray.lastObject.modelArray addObject:model];
-            if (model.cost >= 0) {
-                //收入
-                self.dataArray.lastObject.totalIn += model.cost;
-            } else {
-                self.dataArray.lastObject.totalOut += model.cost;
-            }
-        }
-
-        [self.dataArray sortUsingComparator:^NSComparisonResult(SZMoneyModel *obj1, SZMoneyModel *obj2) {
-            return [obj1.insertTime compare:obj2.insertTime] == NSOrderedAscending;
-        }];
-
-        [self.tableView reloadData];
-        [self countHeader];
-
         [[SZMoneyManager defaultManager] add:model];
+        [self filterAllModelArray];
     };
     [self.navigationController pushViewController:vc animated:true];
+
+//    for (NSInteger i = 1; i < 19; i++) {
+//
+//        SZMoneyModel *model = [[SZMoneyModel alloc]init];
+//        model.type = @"餐饮";
+//        model.cost = -7;
+//        if (i < 10) {
+//            model.insertTime = [NSString stringWithFormat:@"2019-03-0%ld",i];
+//        } else {
+//            model.insertTime = [NSString stringWithFormat:@"2019-03-%ld",i];
+//        }
+//        model.remark = @"早餐";
+//        [[SZMoneyManager defaultManager] add:model];
+//    }
 }
 
 - (void)countHeader
@@ -137,9 +128,9 @@
         totalOut += sectionModel.totalOut;
     }
 
-    _headerView.inLabel.text = [NSString stringWithFormat:@"收入\n%.2f",totalIn];
-    _headerView.outLabel.text = [NSString stringWithFormat:@"支出\n%.2f",-totalOut];
-    _headerView.resutlLabel.text = [NSString stringWithFormat:@"结余\n%.2f",totalIn + totalOut];
+    [_headerView.inBtn setTitle:[NSString stringWithFormat:@"收入\n%.2f",totalIn] forState:UIControlStateNormal];
+    [_headerView.outBtn setTitle:[NSString stringWithFormat:@"支出\n%.2f",-totalOut] forState:UIControlStateNormal];
+    [_headerView.resultBtn setTitle:[NSString stringWithFormat:@"结余\n%.2f",totalIn + totalOut] forState:UIControlStateNormal];
 }
 
 #pragma mark -
@@ -178,7 +169,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HomePageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    HomePageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellReuseIdentifier];
     cell.model = _dataArray[indexPath.section].modelArray[indexPath.row];
     return cell;
 }
@@ -208,13 +199,34 @@
     headerView.frame = CGRectMake(0, 0, SZ_SCREEN_WIDTH, 100);
     self.headerView = headerView;
 
+    headerView.outBtnBlock = ^{
+        NSArray *array = [self.monthModelArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"cost < 0"]];
+
+        MonthStatisticsViewController *vc = [[MonthStatisticsViewController alloc]init];
+        vc.monthModelArray = array;
+        [self.navigationController pushViewController:vc animated:true];
+    };
+
+    headerView.inBtnBlock = ^{
+        NSArray *array = [self.monthModelArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"cost > 0"]];
+
+        MonthStatisticsViewController *vc = [[MonthStatisticsViewController alloc]init];
+        vc.monthModelArray = array;
+        [self.navigationController pushViewController:vc animated:true];
+    };
+
+    headerView.resultBlock = ^{
+        YearStatisticsViewController *vc = [[YearStatisticsViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:true];
+    };
+
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.backgroundColor = DefaultBackgroundColor;
     tableView.tableHeaderView = headerView;
-    [tableView registerClass:HomePageTableViewCell.class forCellReuseIdentifier:@"cell"];
+    [tableView registerClass:HomePageTableViewCell.class forCellReuseIdentifier:CellReuseIdentifier];
     [tableView registerClass:HomePageSectionHeaderView.class forHeaderFooterViewReuseIdentifier:@"header"];
     [self.view addSubview:tableView];
     self.tableView = tableView;

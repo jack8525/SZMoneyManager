@@ -13,8 +13,8 @@
 
 - (void)setInsertTime:(NSString *)insertTime
 {
-    NSDate *date = [SZCurrentUserDefaults().dateFormatter dateFromString:insertTime];
-    _insertTime = [SZCurrentUserDefaults().dateFormatter stringFromDate:date];
+    NSDate *date = [SZCurrentUserDefaults().yMdDateFormatter dateFromString:insertTime];
+    _insertTime = [SZCurrentUserDefaults().yMdDateFormatter stringFromDate:date];
     self.year = [NSString stringWithFormat:@"%ld",date.year];
     self.month = [NSString stringWithFormat:@"%ld",date.month];
     self.day = [NSString stringWithFormat:@"%ld",date.day];
@@ -59,7 +59,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeObject:self.title forKey:@"title"];
+    [aCoder encodeObject:self.type forKey:@"type"];
     [aCoder encodeObject:self.insertTime forKey:@"insertTime"];
     [aCoder encodeFloat:self.cost forKey:@"cost"];
     [aCoder encodeObject:self.remark forKey:@"remark"];
@@ -70,7 +70,7 @@
 //    [aCoder encodeObject:self.weekDay forKey:@"weekDay"];
 }
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    self.title = [aDecoder decodeObjectForKey:@"title"];
+    self.type = [aDecoder decodeObjectForKey:@"type"];
     self.insertTime = [aDecoder decodeObjectForKey:@"insertTime"];
     self.cost = [aDecoder decodeFloatForKey:@"cost"];
     self.remark = [aDecoder decodeObjectForKey:@"remark"];

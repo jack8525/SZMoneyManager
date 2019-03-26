@@ -7,22 +7,33 @@
 //
 
 #import "MoneyAddViewController.h"
+#import "MoneyTypeAddViewController.h"
 #import "MoneyTypeCollectionViewCell.h"
 #import "SZInputView.h"
 #import <IQKeyboardManager.h>
 
 @interface MoneyAddViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
-@property (nonatomic, strong) NSArray *titleArray;
 @property (nonatomic, strong) SZInputView *inputView;
-
+@property (nonatomic, strong) UIButton *typeBtn;
+@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) NSArray *typeArray;
 @end
 
 @implementation MoneyAddViewController
 
+- (NSArray *)typeArray
+{
+    if (_typeBtn.selected == false) {
+        _typeArray = SZCurrentUserDefaults().outTypeArray;
+    } else {
+        _typeArray = SZCurrentUserDefaults().inTypeArray;
+    }
+    return _typeArray;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _titleArray = @[@"餐饮",@"购物",@"住房",@"电影",@"运动"];
     [self setupUI];
 }
 
@@ -31,7 +42,9 @@
     [super viewWillAppear:animated];
     [IQKeyboardManager sharedManager].enable = false;
     if (_model) {
-        [_inputView show:_model.title];
+        [_inputView show:_model.type];
+        _typeBtn.selected = _model.cost > 0;
+        [_collectionView reloadData];
     }
 }
 
@@ -50,24 +63,43 @@
 - (void)typeBtnAction:(UIButton *)button
 {
     button.selected = !button.selected;
-    _inputView.inputBarView.inOut = button.selected;
+    _inputView.inputBarView.inOut = !button.selected;
+    [_collectionView reloadData];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return _titleArray.count;
+    return self.typeArray.count + 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    MoneyTypeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    cell.titleLabel.text = _titleArray[indexPath.row];
+    MoneyTypeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellReuseIdentifier forIndexPath:indexPath];
+    if (indexPath.row == self.typeArray.count) {
+        cell.isAdd = true;
+    }else{
+        cell.isAdd = false;
+        cell.titleLabel.text = self.typeArray[indexPath.row];
+    }
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [_inputView show:_titleArray[indexPath.row]];
+    if (indexPath.row == self.typeArray.count) {
+        MoneyTypeAddViewController *vc = [[MoneyTypeAddViewController alloc]init];
+        vc.reloadBlock = ^(NSString *type) {
+            [SZCurrentUserDefaults() updateTypeArray:type inOut:!self.typeBtn.selected];
+            [self.collectionView reloadData];
+        };
+        [self.navigationController pushViewController:vc animated:true];
+    } else {
+        if (_typeBtn.selected == false) {
+            [_inputView show:SZCurrentUserDefaults().outTypeArray[indexPath.row]];
+        } else {
+            [_inputView show:SZCurrentUserDefaults().inTypeArray[indexPath.row]];
+        }
+    }
 }
 
 - (void)setupUI {
@@ -77,6 +109,7 @@
     [typeBtn addTarget:self action:@selector(typeBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [typeBtn sizeToFit];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:typeBtn];
+    self.typeBtn = typeBtn;
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.minimumLineSpacing = 0;
@@ -87,9 +120,10 @@
     collectionView.backgroundColor = DefaultWhiteColor;
     collectionView.delegate = self;
     collectionView.dataSource = self;
-    [collectionView registerClass:MoneyTypeCollectionViewCell.class forCellWithReuseIdentifier:@"cell"];
+    [collectionView registerClass:MoneyTypeCollectionViewCell.class forCellWithReuseIdentifier:CellReuseIdentifier];
     [self.view addSubview:collectionView];
-
+    self.collectionView = collectionView;
+    
     SZInputView *inputView = [[SZInputView alloc]initWithFrame:CGRectMake(0, SZ_SCREEN_HEIGHT -      self.navigationController.navigationBar.frame.size.height - [[UIApplication sharedApplication] statusBarFrame].size.height, SZ_SCREEN_WIDTH, SZInputBgViewHegiht)];
     inputView.inputBarView.model = _model;
     [self.view addSubview:inputView];
@@ -104,8 +138,6 @@
         make.left.top.right.equalTo(self.view);
         make.bottom.equalTo(inputView.mas_top);
     }];
-
-//    collectionView.frame = CGRectMake(0, 0, SZ_SCREEN_WIDTH, inputView.frame.origin.y);
 }
 
 @end

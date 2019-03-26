@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SZMoneyModel.h"
+
 @class SZInputBarView;
 
 static CGFloat const SZInputBarViewHegiht = 60;
@@ -21,7 +21,7 @@ static CGFloat const SZInputBarViewHegiht = 60;
 @interface SZInputBarView : UIView
 
 @property (nonatomic, strong) SZMoneyModel *model;
-/** 支出:false 收入:true */
+/** 收入:false 支出:true 默认true */
 @property (nonatomic, assign) BOOL inOut;
 
 @property (nonatomic, weak) id<SZInputBarViewDelegate> delegate;

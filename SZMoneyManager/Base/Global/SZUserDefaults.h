@@ -20,8 +20,15 @@
 @property (nonatomic, strong) UIColor *YEBRedColor;
 
 //日期格式器
-@property (nonatomic, strong) NSDateFormatter *dateFormatter;
+@property (nonatomic, strong) NSDateFormatter *yMdDateFormatter;
 @property (nonatomic, strong) NSArray *weekDayArray;
+
+//支出类型
+@property (nonatomic, strong) NSMutableArray<NSString *> *outTypeArray;
+//收入类型
+@property (nonatomic, strong) NSMutableArray<NSString *> *inTypeArray;
+
+- (void)updateTypeArray:(NSString *)type inOut:(BOOL)inOut;
 
 SZUserDefaults *SZCurrentUserDefaults(void);
 @end

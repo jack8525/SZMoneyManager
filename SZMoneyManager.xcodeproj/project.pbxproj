@@ -35,6 +35,13 @@
 		1089E82F22420A590053DD02 /* HomePageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E82E22420A590053DD02 /* HomePageHeaderView.m */; };
 		1089E83222421AEC0053DD02 /* PGDatePickManager+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E83122421AEC0053DD02 /* PGDatePickManager+Category.m */; };
 		1089E8372242219A0053DD02 /* MoneyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E8362242219A0053DD02 /* MoneyDetailViewController.m */; };
+		1089E83A22435AB90053DD02 /* Swifttttt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1089E83922435AB90053DD02 /* Swifttttt.swift */; };
+		1089E83C224361CA0053DD02 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1089E83B224361CA0053DD02 /* Charts.framework */; };
+		1089E83D224361CA0053DD02 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1089E83B224361CA0053DD02 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1089E844224363530053DD02 /* MonthStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E843224363530053DD02 /* MonthStatisticsViewController.m */; };
+		1089E84A224483EE0053DD02 /* MonthStatisticsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E849224483EE0053DD02 /* MonthStatisticsTableViewCell.m */; };
+		1089E84D2244BFB10053DD02 /* YearStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E84C2244BFB10053DD02 /* YearStatisticsViewController.m */; };
+		1089E850224863540053DD02 /* MoneyTypeAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089E84F224863540053DD02 /* MoneyTypeAddViewController.m */; };
 		318FB4EC39F7036FB99B1B72 /* libPods-SZMoneyManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3722ECAA005D02B3172582F /* libPods-SZMoneyManager.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +52,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				1089E83D224361CA0053DD02 /* Charts.framework in Embed Frameworks */,
 				1089E7FA224082CA0053DD02 /* SVProgressHUD.framework in Embed Frameworks */,
 				1089E7F52240828A0053DD02 /* SZKit.framework in Embed Frameworks */,
 			);
@@ -104,6 +112,17 @@
 		1089E83122421AEC0053DD02 /* PGDatePickManager+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PGDatePickManager+Category.m"; sourceTree = "<group>"; };
 		1089E8352242219A0053DD02 /* MoneyDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneyDetailViewController.h; sourceTree = "<group>"; };
 		1089E8362242219A0053DD02 /* MoneyDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoneyDetailViewController.m; sourceTree = "<group>"; };
+		1089E83822435AB80053DD02 /* SZMoneyManager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SZMoneyManager-Bridging-Header.h"; sourceTree = "<group>"; };
+		1089E83922435AB90053DD02 /* Swifttttt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swifttttt.swift; sourceTree = "<group>"; };
+		1089E83B224361CA0053DD02 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
+		1089E842224363530053DD02 /* MonthStatisticsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonthStatisticsViewController.h; sourceTree = "<group>"; };
+		1089E843224363530053DD02 /* MonthStatisticsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonthStatisticsViewController.m; sourceTree = "<group>"; };
+		1089E848224483EE0053DD02 /* MonthStatisticsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonthStatisticsTableViewCell.h; sourceTree = "<group>"; };
+		1089E849224483EE0053DD02 /* MonthStatisticsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonthStatisticsTableViewCell.m; sourceTree = "<group>"; };
+		1089E84B2244BFB10053DD02 /* YearStatisticsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YearStatisticsViewController.h; sourceTree = "<group>"; };
+		1089E84C2244BFB10053DD02 /* YearStatisticsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YearStatisticsViewController.m; sourceTree = "<group>"; };
+		1089E84E224863540053DD02 /* MoneyTypeAddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneyTypeAddViewController.h; sourceTree = "<group>"; };
+		1089E84F224863540053DD02 /* MoneyTypeAddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoneyTypeAddViewController.m; sourceTree = "<group>"; };
 		1A09029BC9326F89F06711DA /* Pods-SZMoneyManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SZMoneyManager.release.xcconfig"; path = "Target Support Files/Pods-SZMoneyManager/Pods-SZMoneyManager.release.xcconfig"; sourceTree = "<group>"; };
 		B3722ECAA005D02B3172582F /* libPods-SZMoneyManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SZMoneyManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F04A6AC21E32817C9CECF9A5 /* Pods-SZMoneyManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SZMoneyManager.debug.xcconfig"; path = "Target Support Files/Pods-SZMoneyManager/Pods-SZMoneyManager.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1089E7F9224082CA0053DD02 /* SVProgressHUD.framework in Frameworks */,
+				1089E83C224361CA0053DD02 /* Charts.framework in Frameworks */,
 				1089E7F42240828A0053DD02 /* SZKit.framework in Frameworks */,
 				318FB4EC39F7036FB99B1B72 /* libPods-SZMoneyManager.a in Frameworks */,
 			);
@@ -136,6 +156,7 @@
 		1089E7C3224072E70053DD02 = {
 			isa = PBXGroup;
 			children = (
+				1089E83B224361CA0053DD02 /* Charts.framework */,
 				1089E7CE224072E70053DD02 /* SZMoneyManager */,
 				1089E7CD224072E70053DD02 /* Products */,
 				14DC01780090763FDC289FD1 /* Pods */,
@@ -183,6 +204,7 @@
 		1089E7E6224074CB0053DD02 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				1089E83E224362F70053DD02 /* Statistics(统计) */,
 				1089E833224221780053DD02 /* Detail(详情) */,
 				1089E8142240CD2A0053DD02 /* Edit(编辑) */,
 				1089E80B2240C4BF0053DD02 /* Add(添加) */,
@@ -209,6 +231,8 @@
 				1089E80522408B610053DD02 /* SZUserDefaults.m */,
 				1089E82A2241D8F90053DD02 /* SZMoneyManager.h */,
 				1089E82B2241D8F90053DD02 /* SZMoneyManager.m */,
+				1089E83922435AB90053DD02 /* Swifttttt.swift */,
+				1089E83822435AB80053DD02 /* SZMoneyManager-Bridging-Header.h */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -270,6 +294,8 @@
 			children = (
 				1089E80D2240C5050053DD02 /* MoneyAddViewController.h */,
 				1089E80E2240C5050053DD02 /* MoneyAddViewController.m */,
+				1089E84E224863540053DD02 /* MoneyTypeAddViewController.h */,
+				1089E84F224863540053DD02 /* MoneyTypeAddViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -341,6 +367,35 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		1089E83E224362F70053DD02 /* Statistics(统计) */ = {
+			isa = PBXGroup;
+			children = (
+				1089E847224483D90053DD02 /* View */,
+				1089E83F224363130053DD02 /* Controller */,
+			);
+			path = "Statistics(统计)";
+			sourceTree = "<group>";
+		};
+		1089E83F224363130053DD02 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1089E842224363530053DD02 /* MonthStatisticsViewController.h */,
+				1089E843224363530053DD02 /* MonthStatisticsViewController.m */,
+				1089E84B2244BFB10053DD02 /* YearStatisticsViewController.h */,
+				1089E84C2244BFB10053DD02 /* YearStatisticsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1089E847224483D90053DD02 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1089E848224483EE0053DD02 /* MonthStatisticsTableViewCell.h */,
+				1089E849224483EE0053DD02 /* MonthStatisticsTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		14DC01780090763FDC289FD1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +440,7 @@
 				TargetAttributes = {
 					1089E7CB224072E70053DD02 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -430,6 +486,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SZKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Charts.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -507,9 +564,13 @@
 				1089E7EC224075890053DD02 /* HomePageViewController.m in Sources */,
 				1089E8292241D4E70053DD02 /* SZMoneySectionModel.m in Sources */,
 				1089E8372242219A0053DD02 /* MoneyDetailViewController.m in Sources */,
+				1089E850224863540053DD02 /* MoneyTypeAddViewController.m in Sources */,
 				1089E80A224098940053DD02 /* SZMoneyModel.m in Sources */,
 				1089E83222421AEC0053DD02 /* PGDatePickManager+Category.m in Sources */,
+				1089E84A224483EE0053DD02 /* MonthStatisticsTableViewCell.m in Sources */,
+				1089E844224363530053DD02 /* MonthStatisticsViewController.m in Sources */,
 				1089E7DF224072E90053DD02 /* main.m in Sources */,
+				1089E84D2244BFB10053DD02 /* YearStatisticsViewController.m in Sources */,
 				1089E82C2241D8F90053DD02 /* SZMoneyManager.m in Sources */,
 				1089E80322408AD20053DD02 /* HomePageTableViewCell.m in Sources */,
 				1089E81F2241C3D50053DD02 /* SZCalendar.m in Sources */,
@@ -517,6 +578,7 @@
 				1089E80622408B610053DD02 /* SZUserDefaults.m in Sources */,
 				1089E8132240C7600053DD02 /* MoneyTypeCollectionViewCell.m in Sources */,
 				1089E8262241C4DF0053DD02 /* NSObject+Category.m in Sources */,
+				1089E83A22435AB90053DD02 /* Swifttttt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,7 +720,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F04A6AC21E32817C9CECF9A5 /* Pods-SZMoneyManager.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZGE7A98KCX;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -674,7 +738,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nenglong.SZMoneyManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SZMoneyManager/Base/Global/SZMoneyManager-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wdocumentation";
 			};
 			name = Debug;
 		};
@@ -682,7 +750,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1A09029BC9326F89F06711DA /* Pods-SZMoneyManager.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZGE7A98KCX;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -698,7 +768,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nenglong.SZMoneyManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SZMoneyManager/Base/Global/SZMoneyManager-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wdocumentation";
 			};
 			name = Release;
 		};

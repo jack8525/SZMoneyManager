@@ -7,8 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SZMoneyModel.h"
-#import "SZMoneySectionModel.h"
 
 @interface SZMoneyManager : NSObject
 

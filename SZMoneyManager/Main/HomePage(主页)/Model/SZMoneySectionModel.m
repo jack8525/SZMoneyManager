@@ -18,4 +18,15 @@
     return _modelArray;
 }
 
+- (NSString *)percent
+{
+    _percent = [NSString stringWithFormat:@"%.2f%%", _cost / _totalCost * 100];
+    return _percent;
+}
+
+- (NSString *)costString
+{
+    _costString = [NSString stringWithFormat:@"%.2f",_cost];
+    return _costString;
+}
 @end

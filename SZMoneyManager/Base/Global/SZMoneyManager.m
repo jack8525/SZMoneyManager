@@ -36,7 +36,6 @@ static NSString *cacheKey = @"cacheKey";
         if ([_cache containsObjectForKey:cacheKey]) {
             NSArray *modelArray = [_cache objectForKey:cacheKey];
             _allModelArray = modelArray.mutableCopy;
-            NSLog(@"有 %ld 条记录",_allModelArray.count);
         }
         if (_allModelArray == nil) {
             _allModelArray = [NSMutableArray array];
@@ -48,7 +47,7 @@ static NSString *cacheKey = @"cacheKey";
 - (void)add:(SZMoneyModel *)model
 {
     [_allModelArray addObject:model];
-    [_cache setObject:_allModelArray forKey:cacheKey withBlock:nil];
+    [_cache setObject:_allModelArray forKey:cacheKey];
 }
 
 - (void)update:(SZMoneyModel *)model

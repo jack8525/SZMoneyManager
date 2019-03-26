@@ -8,6 +8,9 @@
 
 #import "SZUserDefaults.h"
 
+static NSString * const InTypeArrayKey = @"inTypeArrayKey";
+static NSString * const OutTypeArrayKey = @"outTypeArrayKey";
+
 @implementation SZUserDefaults
 
 SZUserDefaults *SZCurrentUserDefaults(void)
@@ -25,12 +28,12 @@ static dispatch_once_t onceToken;
     return standard;
 }
 
-- (NSDateFormatter *)dateFormatter
+- (NSDateFormatter *)yMdDateFormatter
 {
-    if (!_dateFormatter) {
-        _dateFormatter = [NSDateFormatter sz_dateFormatterWithFormat:SZDateFormtyMd];
+    if (!_yMdDateFormatter) {
+        _yMdDateFormatter = [NSDateFormatter sz_dateFormatterWithFormat:SZDateFormtyMd];
     }
-    return _dateFormatter;
+    return _yMdDateFormatter;
 }
 
 - (NSArray *)weekDayArray
@@ -96,5 +99,49 @@ static dispatch_once_t onceToken;
         _YEBRedColor = SZ_HEXCOLOR(0xff5c5c);
     }
     return _YEBRedColor;
+}
+
+- (NSMutableArray<NSString *> *)inTypeArray
+{
+    if (!_inTypeArray) {
+        _inTypeArray = [[NSUserDefaults standardUserDefaults] objectForKey:InTypeArrayKey];
+        _inTypeArray = _inTypeArray.mutableCopy;
+    }
+    if (!_inTypeArray) {
+        _inTypeArray = @[@"工资",@"奖金"].mutableCopy;
+        [[NSUserDefaults standardUserDefaults] setObject:_inTypeArray forKey:InTypeArrayKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    return _inTypeArray;
+}
+
+- (NSMutableArray<NSString *> *)outTypeArray
+{
+    if (!_outTypeArray) {
+        _outTypeArray = [[NSUserDefaults standardUserDefaults] objectForKey:OutTypeArrayKey];
+        _outTypeArray = _outTypeArray.mutableCopy;
+    }
+    if (!_outTypeArray) {
+        _outTypeArray = @[@"餐饮",@"购物",@"住房",@"电影",@"运动"].mutableCopy;
+        [[NSUserDefaults standardUserDefaults] setObject:_outTypeArray forKey:OutTypeArrayKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    return _outTypeArray;
+}
+
+- (void)updateTypeArray:(NSString *)type inOut:(BOOL)inOut
+{
+    NSMutableArray *tmpArray;
+    NSString *key;
+    if (inOut == false) {
+        tmpArray = _inTypeArray;
+        key = InTypeArrayKey;
+    } else {
+        tmpArray = _outTypeArray;
+        key = OutTypeArrayKey;
+    }
+    [tmpArray addObject:type];
+    [[NSUserDefaults standardUserDefaults] setObject:tmpArray forKey:key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 @end

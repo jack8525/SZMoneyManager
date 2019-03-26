@@ -10,8 +10,11 @@
 
 @interface HomePageHeaderView : UIView
 
-@property (nonatomic, strong) UILabel *inLabel;
-@property (nonatomic, strong) UILabel *outLabel;
-@property (nonatomic, strong) UILabel *resutlLabel;
+@property (nonatomic, strong) UIButton *inBtn;
+@property (nonatomic, strong) UIButton *outBtn;
+@property (nonatomic, strong) UIButton *resultBtn;
 
+@property (nonatomic, copy) void(^outBtnBlock)(void);
+@property (nonatomic, copy) void(^inBtnBlock)(void);
+@property (nonatomic, copy) void(^resultBlock)(void);
 @end

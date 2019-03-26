@@ -17,6 +17,7 @@
         UIImageView *icon = [[UIImageView alloc]init];
         icon.backgroundColor = DefaultBackgroundColor;
         [self.contentView addSubview:icon];
+        self.icon = icon;
 
         UILabel *titleLabel = [[UILabel alloc]init];
         titleLabel.textColor = Default75Color;
@@ -39,4 +40,14 @@
     return self;
 }
 
+- (void)setIsAdd:(BOOL)isAdd
+{
+    _isAdd = isAdd;
+    if (isAdd) {
+        _icon.image = [UIImage imageNamed:@"add_normal"];
+        _titleLabel.text = @"";
+    } else {
+        _icon.image = nil;
+    }
+}
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "SZBaseViewController.h"
-#import "SZMoneyModel.h"
+
 
 @interface MoneyDetailViewController : SZBaseViewController
 

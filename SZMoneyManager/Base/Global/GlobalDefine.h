@@ -9,6 +9,9 @@
 #ifndef GlobalDefine_h
 #define GlobalDefine_h
 
+//公用的cell复用标识符
+static NSString * const CellReuseIdentifier = @"cellReuseIdentifier";
+
 //颜色定义
 #define YEBThemeColor               SZ_HEXCOLOR(0x38b58a)
 #define DefaultThemeColor           Default75Color

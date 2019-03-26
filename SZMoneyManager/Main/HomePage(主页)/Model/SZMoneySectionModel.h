@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SZMoneyModel.h"
 
 @interface SZMoneySectionModel : NSObject
 
@@ -17,4 +16,10 @@
 @property (nonatomic, assign) CGFloat totalOut;
 
 @property (nonatomic, strong) NSMutableArray<SZMoneyModel *> *modelArray;
+
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, assign) CGFloat totalCost;
+@property (nonatomic, assign) CGFloat cost;
+@property (nonatomic, copy) NSString *costString;
+@property (nonatomic, copy) NSString *percent;
 @end

@@ -8,16 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "SZInputBarView.h"
-#import "SZMoneyModel.h"
+
 
 static CGFloat const SZInputBgViewHegiht = 380;
 
 @interface SZInputView : UIView
 
 @property (nonatomic, strong) SZInputBarView *inputBarView;
-//@property (nonatomic, strong) SZMoneyModel *model;
-///** 支出:false 收入:true */
-//@property (nonatomic, assign) BOOL inOut;
 
 @property (nonatomic, copy) void(^sendBlock)(SZMoneyModel *model);
 

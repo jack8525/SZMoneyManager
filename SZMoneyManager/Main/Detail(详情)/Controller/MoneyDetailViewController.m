@@ -28,7 +28,7 @@
                     @"备注"
                     ];
     _detailTitleArray = @[
-                          _model.title,
+                          _model.type,
                           _model.inOutC,
                           _model.costString,
                           [_model.insertTime stringByAppendingString:_model.weekDayC],
@@ -54,7 +54,7 @@
         [[SZMoneyManager defaultManager] update:model];
 
         self.detailTitleArray = @[
-                              self.model.title,
+                              self.model.type,
                               self.model.inOutC,
                               self.model.costString,
                               [self.model.insertTime stringByAppendingString:self.model.weekDayC],
@@ -73,7 +73,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"cell"];
+    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellReuseIdentifier];
     cell.textLabel.text = _titleArray[indexPath.row];
     cell.detailTextLabel.text = _detailTitleArray[indexPath.row];
     return cell;
@@ -89,7 +89,7 @@
     tableView.dataSource = self;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.tableFooterView = [[UIView alloc]init];
-    [tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"cell"];
+    [tableView registerClass:UITableViewCell.class forCellReuseIdentifier:CellReuseIdentifier];
     [self.view addSubview:tableView];
     self.tableView = tableView;
     

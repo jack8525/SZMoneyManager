@@ -1,4 +1,4 @@
-github "jack8525/SZKit"
+#github "jack8525/SZKit"
 #github "AFNetworking/AFNetworking" ~> 3.0
 #github "SnapKit/Masonry"
 #github "hackiftekhar/IQKeyboardManager"
@@ -9,3 +9,4 @@ github "jack8525/SZKit"
 #github "ruslanskorb/RSKImageCropper"
 #github "WenchaoD/FSCalendar"
 #github "ViccAlexander/Chameleon"
+github "danielgindi/Charts" ~> 3.2.2

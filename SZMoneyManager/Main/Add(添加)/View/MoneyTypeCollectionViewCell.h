@@ -10,6 +10,8 @@
 
 @interface MoneyTypeCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic, strong) UIImageView *icon;
 @property (nonatomic, strong) UILabel *titleLabel;
 
+@property (nonatomic, assign) BOOL isAdd;
 @end

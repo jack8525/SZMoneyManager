@@ -7,11 +7,13 @@
 //
 
 #import "SZInputBarView.h"
+#import <YYKit.h>
 
-@interface SZInputBarView ()
+@interface SZInputBarView ()<UITextFieldDelegate>
 
 @property (nonatomic, assign) BOOL isChange;
 @property (nonatomic, strong) NSDate *selectedDate;
+@property (nonatomic, strong) UIButton *dateBtn;
 
 @end
 
@@ -22,6 +24,7 @@
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = DefaultBackgroundColor;
         self.selectedDate = [NSDate date];
+        self.inOut = true;
         
         UILabel *typeLabel = [[UILabel alloc]init];
         typeLabel.textAlignment = NSTextAlignmentCenter;
@@ -33,6 +36,8 @@
         textField.placeholder = @"备注";
         textField.fontSize = 20;
         textField.text = @"";
+        textField.returnKeyType = UIReturnKeyDone;
+        textField.delegate = self;
         [self addSubview:textField];
         self.remarkTextField = textField;
 
@@ -72,7 +77,7 @@
         }];
 
         NSArray *tmpArray = @[
-                              @"7",@"8",@"9",[[NSDate date] sz_stringWithFormat:@"MM/dd"],
+                              @"7",@"8",@"9",[_selectedDate sz_stringWithFormat:@"MM/dd"],
                               @"4",@"5",@"6",@"+",
                               @"1",@"2",@"3",@"-",
                               @".",@"0",@"后退",@"确认",
@@ -89,6 +94,9 @@
             [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:button];
 
+            if (i == 3) {
+                _dateBtn = button;
+            }
 
             if (lastBtn) {
                 [button mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -148,8 +156,8 @@
             } else {
                 model = [[SZMoneyModel alloc]init];
             }
-            model.title = _typeLabel.text;
-            model.cost = (_inOut ? 1 : -1) * _costTextField.text.floatValue;
+            model.type = _typeLabel.text;
+            model.cost = (_inOut ? -1 : 1) * fabsf(_costTextField.text.floatValue);
             model.insertTime = [_selectedDate sz_stringWithFormat:SZDateFormtyMd];
             model.remark = _remarkTextField.text;
             [_delegate inputBarViewDidClickConfirm:self model:model];
@@ -169,9 +177,19 @@
 {
     _model = model;
     if (model) {
-        _typeLabel.text = model.title;
+        _typeLabel.text = model.type;
         _remarkTextField.text = model.remark;
         _costTextField.text = model.costString;
+        _inOut = model.cost < 0;
+        _selectedDate = [SZCurrentUserDefaults().yMdDateFormatter dateFromString:model.insertTime];
+        [_dateBtn setTitle:[_selectedDate sz_stringWithFormat:@"MM/dd"] forState:UIControlStateNormal];
     }
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return false;
+}
+
 @end

@@ -104,17 +104,17 @@
     };
     [self.navigationController pushViewController:vc animated:true];
 
-//    for (NSInteger i = 1; i < 19; i++) {
+//    for (NSInteger i = 1; i < 32; i++) {
 //
 //        SZMoneyModel *model = [[SZMoneyModel alloc]init];
 //        model.type = @"餐饮";
-//        model.cost = -7;
+//        model.cost = -13;
 //        if (i < 10) {
-//            model.insertTime = [NSString stringWithFormat:@"2019-03-0%ld",i];
+//            model.insertTime = [NSString stringWithFormat:@"2019-01-0%ld",i];
 //        } else {
-//            model.insertTime = [NSString stringWithFormat:@"2019-03-%ld",i];
+//            model.insertTime = [NSString stringWithFormat:@"2019-01-%ld",i];
 //        }
-//        model.remark = @"早餐";
+//        model.remark = @"午餐";
 //        [[SZMoneyManager defaultManager] add:model];
 //    }
 }

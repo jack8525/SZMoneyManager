@@ -42,6 +42,8 @@
     [self sz_presentAlertView:@"确定删除?" completion:^(NSInteger index) {
         if (index == 1) {
             [[SZMoneyManager defaultManager] delete:self.model];
+            self.reload();
+            [self.navigationController popViewControllerAnimated:true];
         }
     }];
 }

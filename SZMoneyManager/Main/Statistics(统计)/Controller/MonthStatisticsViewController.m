@@ -28,9 +28,25 @@
     [self setupCharts];
 }
 
+- (void)rightAction
+{
+    MonthStatisticsViewController *vc = [[MonthStatisticsViewController alloc]init];
+    vc.inOut = _inOut;
+    [self.navigationController pushViewController:vc animated:true];
+}
+
 - (void)handleData {
     //按日期由大到小
     NSMutableArray<SZMoneyModel *> *monthModelArray = _monthModelArray.mutableCopy;
+    if (_monthModelArray == nil) {
+        monthModelArray = [SZMoneyManager defaultManager].allModelArray.mutableCopy;
+        if (_inOut) {
+            [monthModelArray filterUsingPredicate:[NSPredicate predicateWithFormat:@"cost < 0"]];
+        } else {
+            [monthModelArray filterUsingPredicate:[NSPredicate predicateWithFormat:@"cost > 0"]];
+        }
+    }
+
     [monthModelArray sortUsingComparator:^NSComparisonResult(SZMoneyModel *obj1, SZMoneyModel *obj2) {
         return [obj1.type compare:obj2.type] == NSOrderedAscending;
     }];
@@ -65,6 +81,10 @@
 }
 
 - (void)setupCharts {
+    if (_monthModelArray) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:_inOut ? @"年支出" : @"年收入" style:UIBarButtonItemStyleDone target:self action:@selector(rightAction)];
+    }
+
     PieChartView *chartView = [[PieChartView alloc]init];
     [self.view addSubview:chartView];
     self.chartView = chartView;

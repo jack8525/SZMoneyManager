@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MonthStatisticsViewController : SZBaseViewController
 
+@property (nonatomic, assign) BOOL inOut;
 @property (nonatomic, strong) NSArray<SZMoneyModel *> *monthModelArray;
 
 @end

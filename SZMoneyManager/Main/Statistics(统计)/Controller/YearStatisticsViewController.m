@@ -14,6 +14,9 @@
 @interface YearStatisticsViewController ()<ChartViewDelegate,IChartAxisValueFormatter>
 
 @property (nonatomic, strong) BarChartView *chartView;
+@property (nonatomic, strong) UILabel *inTextLabel;
+@property (nonatomic, strong) UILabel *outTextLabel;
+@property (nonatomic, strong) UILabel *resultTextLabel;
 
 @property (nonatomic, strong) NSDate *selectedDate;
 @property (nonatomic, strong) NSArray<SZMoneySectionModel *> *monthArray;
@@ -120,6 +123,72 @@
 
     [chartView.viewPortHandler setMinimumScaleX:1.5];
 
+    UILabel *inLabel = [[UILabel alloc]init];
+    inLabel.text = @"收入: ";
+    inLabel.textAlignment = NSTextAlignmentRight;
+    [self.view addSubview:inLabel];
+
+    UILabel *inTextLabel = [[UILabel alloc]init];
+    [self.view addSubview:inTextLabel];
+    self.inTextLabel = inTextLabel;
+
+    UILabel *outLabel = [[UILabel alloc]init];
+    outLabel.text = @"支出: ";
+    outLabel.textAlignment = NSTextAlignmentRight;
+    [self.view addSubview:outLabel];
+
+    UILabel *outTextLabel = [[UILabel alloc]init];
+    [self.view addSubview:outTextLabel];
+    self.outTextLabel = outTextLabel;
+
+    UILabel *resultLabel = [[UILabel alloc]init];
+    resultLabel.text = @"结余: ";
+    resultLabel.textAlignment = NSTextAlignmentRight;
+    [self.view addSubview:resultLabel];
+
+    UILabel *resultTextLabel = [[UILabel alloc]init];
+    [self.view addSubview:resultTextLabel];
+    self.resultTextLabel = resultTextLabel;
+
+    CGFloat titleWidth = SZ_SCREEN_WIDTH / 12 + 10;
+    CGFloat width = SZ_SCREEN_WIDTH / 4 - 10;
+
+    [inLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.equalTo(@0);
+        make.top.equalTo(chartView.mas_bottom);
+        make.width.equalTo(@(titleWidth));
+    }];
+
+    [inTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.equalTo(inLabel);
+        make.left.equalTo(inLabel.mas_right);
+        make.width.equalTo(@(width));
+    }];
+
+    [outLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.equalTo(inTextLabel);
+        make.left.equalTo(inTextLabel.mas_right);
+        make.width.equalTo(@(titleWidth));
+    }];
+
+    [outTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.equalTo(outLabel);
+        make.left.equalTo(outLabel.mas_right);
+        make.width.equalTo(@(width));
+    }];
+
+    [resultLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.equalTo(outTextLabel);
+        make.left.equalTo(outTextLabel.mas_right);
+        make.width.equalTo(@(titleWidth));
+    }];
+
+    [resultTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.equalTo(resultLabel);
+        make.left.equalTo(resultLabel.mas_right);
+        make.width.equalTo(@(width));
+    }];
+
     [self filterAllModelArray];
 }
 
@@ -135,6 +204,8 @@
     [allModelArray sortUsingComparator:^NSComparisonResult(SZMoneyModel *obj1, SZMoneyModel *obj2) {
         return [obj1.month compare:obj2.month] == NSOrderedAscending;
     }];
+    CGFloat inCost = 0;
+    CGFloat outCost = 0;
     //计算出每月结余
     NSMutableArray<SZMoneySectionModel *> *monthArray = [NSMutableArray array];
     for (NSInteger i = 0; i < 12; i++) {
@@ -146,9 +217,17 @@
         NSInteger index = model.month.integerValue - 1;
         if (index < monthArray.count && index >= 0) {
             monthArray[index].totalCost += model.cost;
+            if (model.cost > 0) {
+                inCost += model.cost;
+            } else {
+                outCost += model.cost;
+            }
         }
     }
     self.monthArray = monthArray;
+    _inTextLabel.text = [NSString stringWithFormat:@"%.2f",inCost];
+    _outTextLabel.text = [NSString stringWithFormat:@"%.2f",outCost];
+    _resultTextLabel.text = [NSString stringWithFormat:@"%.2f",inCost + outCost];
 
     NSMutableArray<BarChartDataEntry *> *values = [[NSMutableArray alloc] init];
     NSMutableArray<UIColor *> *colors = [[NSMutableArray alloc] init];

@@ -204,6 +204,7 @@
 
         MonthStatisticsViewController *vc = [[MonthStatisticsViewController alloc]init];
         vc.monthModelArray = array;
+        vc.inOut = true;
         [self.navigationController pushViewController:vc animated:true];
     };
 
@@ -212,6 +213,7 @@
 
         MonthStatisticsViewController *vc = [[MonthStatisticsViewController alloc]init];
         vc.monthModelArray = array;
+        vc.inOut = false;
         [self.navigationController pushViewController:vc animated:true];
     };
 

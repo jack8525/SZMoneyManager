@@ -31,6 +31,7 @@
     [self setupUI];
 }
 
+#pragma mark - 选择年份
 - (void)dateBtnAction:(UIButton *)button
 {
     PGDatePickManager *datePickManager = [PGDatePickManager YEBStyle];
@@ -189,7 +190,11 @@
         make.width.equalTo(@(width));
     }];
 
-    [self filterAllModelArray];
+    if (_model) {
+        [self filterSectionModelArray];
+    }else{
+        [self filterAllModelArray];
+    }
 }
 
 - (void)filterAllModelArray
@@ -252,7 +257,7 @@
         }
     }
 
-    BarChartDataSet *set = [[BarChartDataSet alloc]initWithValues:values label:@"Values"];
+    BarChartDataSet *set = [[BarChartDataSet alloc]initWithEntries:values label:@"Values"];
     set.colors = colors;
     set.valueColors = colors;
 
@@ -268,6 +273,75 @@
     _chartView.data = data;
 }
 
+- (void)filterSectionModelArray
+{
+    self.title = [NSString stringWithFormat:@"每月[%@]数据",_model.title];
+
+    NSArray *monthTitleArray = @[@"一月",@"二月",@"三月",@"四月",@"五月",@"六月",@"七月",@"八月",@"九月",@"十月",@"十一月",@"十二月"];
+
+    NSMutableArray *allModelArray = [SZMoneyManager defaultManager].allModelArray.mutableCopy;
+    //过滤出指定年份的数组
+    [allModelArray filterUsingPredicate:[NSPredicate predicateWithFormat:@"year = %@",[NSString stringWithFormat:@"%ld",_selectedDate.year]]];
+    [allModelArray sortUsingComparator:^NSComparisonResult(SZMoneyModel *obj1, SZMoneyModel *obj2) {
+        return [obj1.month compare:obj2.month] == NSOrderedAscending;
+    }];
+    //过滤出指定类型的数组  
+    [allModelArray filterUsingPredicate:[NSPredicate predicateWithFormat:@"type = %@",_model.title]];
+    //计算出每月数据
+    NSMutableArray<SZMoneySectionModel *> *monthArray = [NSMutableArray array];
+    for (NSInteger i = 0; i < 12; i++) {
+        SZMoneySectionModel *model = [[SZMoneySectionModel alloc]init];
+        model.insertTime = monthTitleArray[i];
+        [monthArray addObject:model];
+    }
+    for (SZMoneyModel *model in allModelArray) {
+        NSInteger index = model.month.integerValue - 1;
+        if (index < monthArray.count && index >= 0) {
+            monthArray[index].totalCost += model.cost;
+        }
+    }
+    self.monthArray = monthArray;
+
+    NSMutableArray<BarChartDataEntry *> *values = [[NSMutableArray alloc] init];
+    NSMutableArray<UIColor *> *colors = [[NSMutableArray alloc] init];
+
+    UIColor *green = [UIColor colorWithRed:110/255.f green:190/255.f blue:102/255.f alpha:1.f];
+    UIColor *red = [UIColor colorWithRed:211/255.f green:74/255.f blue:88/255.f alpha:1.f];
+
+    for (int i = 0; i < monthArray.count; i++)
+    {
+        SZMoneySectionModel *d = monthArray[i];
+        BarChartDataEntry *entry = [[BarChartDataEntry alloc] initWithX:i y:d.totalCost];
+        [values addObject:entry];
+
+        // specific colors
+        if (d.totalCost >= 0.f)
+        {
+            [colors addObject:green];
+        }
+        else
+        {
+            [colors addObject:red];
+        }
+    }
+
+    BarChartDataSet *set = [[BarChartDataSet alloc]initWithEntries:values label:@"Values"];
+    set.colors = colors;
+    set.valueColors = colors;
+
+    BarChartData *data = [[BarChartData alloc] initWithDataSet:set];
+    [data setValueFont:[UIFont systemFontOfSize:13.f]];
+
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.maximumFractionDigits = 1;
+    [data setValueFormatter:[[ChartDefaultValueFormatter alloc] initWithFormatter:formatter]];
+
+    data.barWidth = 0.8;
+
+    _chartView.data = data;
+}
+
+#pragma mark -
 - (NSString *)stringForValue:(double)value
                         axis:(ChartAxisBase *)axis
 {

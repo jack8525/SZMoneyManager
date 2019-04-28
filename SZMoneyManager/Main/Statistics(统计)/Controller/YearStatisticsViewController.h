@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YearStatisticsViewController : SZBaseViewController
 
+@property (nonatomic, strong) SZMoneySectionModel *model;
+
 @end
 
 NS_ASSUME_NONNULL_END

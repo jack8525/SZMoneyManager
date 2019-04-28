@@ -9,4 +9,4 @@
 #github "ruslanskorb/RSKImageCropper"
 #github "WenchaoD/FSCalendar"
 #github "ViccAlexander/Chameleon"
-github "danielgindi/Charts" ~> 3.2.2
+github "danielgindi/Charts" ~> 3.3.0

@@ -7,6 +7,7 @@
 //
 
 #import "MonthStatisticsViewController.h"
+#import "YearStatisticsViewController.h"
 #import "MonthStatisticsTableViewCell.h"
 #import "SZMoneyManager-Bridging-Header.h"
 
@@ -66,7 +67,7 @@
             SZMoneySectionModel *sectionModel = [[SZMoneySectionModel alloc]init];
             sectionModel.title = model.type;
             sectionModel.totalCost = totalCost;
-//            sectionModel.insertTime = model.insertTime;
+            sectionModel.insertTime = model.insertTime;
 //            sectionModel.weekDayC = model.weekDayC;
             [_dataArray addObject:sectionModel];
         }
@@ -192,7 +193,7 @@
         [entries addObject:[[PieChartDataEntry alloc] initWithValue:dataArray[i].percent.floatValue label:dataArray[i].title]];
     }
 
-    PieChartDataSet *dataSet = [[PieChartDataSet alloc] initWithValues:entries label:@""];
+    PieChartDataSet *dataSet = [[PieChartDataSet alloc] initWithEntries:entries label:@""];
     //拼图间的空间
     dataSet.sliceSpace = 2.0;
 
@@ -242,5 +243,14 @@
     }
     cell.model = _dataArray[indexPath.row];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:true];
+
+    YearStatisticsViewController *vc = [[YearStatisticsViewController alloc]init];
+    vc.model = _dataArray[indexPath.row];
+    [self.navigationController pushViewController:vc animated:true];
 }
 @end

@@ -20,15 +20,16 @@
 @property (nonatomic, strong) UIColor *YEBRedColor;
 
 //日期格式器
-@property (nonatomic, strong) NSDateFormatter *yMdDateFormatter;
-@property (nonatomic, strong) NSArray *weekDayArray;
+@property (nonatomic, strong) NSDateFormatter *yMdDateFormatter;//yyyy-MM-dd
+@property (nonatomic, strong) NSArray *weekDayArray;//日期汉字数组,周日,周一,.....
 
 //支出类型
 @property (nonatomic, strong) NSMutableArray<NSString *> *outTypeArray;
 //收入类型
 @property (nonatomic, strong) NSMutableArray<NSString *> *inTypeArray;
 
-- (void)updateTypeArray:(NSString *)type inOut:(BOOL)inOut;
+//更新消费类型
+- (void)updateTypeArray:(NSString *)type costType:(SZCostType)costType;
 
 SZUserDefaults *SZCurrentUserDefaults(void);
 @end

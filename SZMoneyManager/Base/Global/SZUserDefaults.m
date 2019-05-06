@@ -129,11 +129,11 @@ static dispatch_once_t onceToken;
     return _outTypeArray;
 }
 
-- (void)updateTypeArray:(NSString *)type inOut:(BOOL)inOut
+- (void)updateTypeArray:(NSString *)type costType:(SZCostType)costType
 {
     NSMutableArray *tmpArray;
     NSString *key;
-    if (inOut == false) {
+    if (costType == SZCostTypeIn) {
         tmpArray = _inTypeArray;
         key = InTypeArrayKey;
     } else {

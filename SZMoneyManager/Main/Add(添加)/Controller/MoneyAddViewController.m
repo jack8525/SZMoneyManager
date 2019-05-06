@@ -89,7 +89,7 @@
     if (indexPath.row == self.typeArray.count) {
         MoneyTypeAddViewController *vc = [[MoneyTypeAddViewController alloc]init];
         vc.reloadBlock = ^(NSString *type) {
-            [SZCurrentUserDefaults() updateTypeArray:type inOut:!self.typeBtn.selected];
+            [SZCurrentUserDefaults() updateTypeArray:type costType:self.typeBtn.selected ? SZCostTypeOut : SZCostTypeIn];
             [self.collectionView reloadData];
         };
         [self.navigationController pushViewController:vc animated:true];

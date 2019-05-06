@@ -39,9 +39,9 @@
     [self setupUI];
 
     [self filterAllModelArray];
-
 }
 
+#pragma mark - 过滤数据
 - (void)filterAllModelArray
 {
     //全部数据
@@ -49,27 +49,32 @@
     //过滤掉非本月的
     [allModelArray filterUsingPredicate:[NSPredicate predicateWithFormat:@"year = %@",[NSString stringWithFormat:@"%ld",_selectedDate.year]]];
     [allModelArray filterUsingPredicate:[NSPredicate predicateWithFormat:@"month = %@",[NSString stringWithFormat:@"%ld",_selectedDate.month]]];
-    //按日期由大到小
+    //排序,按日期由大到小
     [allModelArray sortUsingComparator:^NSComparisonResult(SZMoneyModel *obj1, SZMoneyModel *obj2) {
         return [obj1.insertTime compare:obj2.insertTime] == NSOrderedAscending;
     }];
+    //当前月份的所有数据
     _monthModelArray = allModelArray;
     //组成数据源
     [_dataArray removeAllObjects];
     for (NSInteger i = 0; i < allModelArray.count; i++) {
         SZMoneyModel *model = allModelArray[i];
         if (i > 0 && [model.insertTime isEqualToString:allModelArray[i - 1].insertTime]) {
-
+            //第一个数据必先创建一个模型
+            //日期不一样的就重新创建一个模型
         }else{
+            //每天的模型
             SZMoneySectionModel *sectionModel = [[SZMoneySectionModel alloc]init];
             sectionModel.insertTime = model.insertTime;
             sectionModel.weekDayC = model.weekDayC;
             [_dataArray addObject:sectionModel];
         }
+        //统计每天的支出和收入
         if (model.cost >= 0) {
             //收入
             _dataArray.lastObject.totalIn += model.cost;
         } else {
+            //支出
             _dataArray.lastObject.totalOut += model.cost;
         }
         [_dataArray.lastObject.modelArray addObject:model];
@@ -79,6 +84,7 @@
     [_tableView reloadData];
 }
 
+#pragma mark - 选择月份
 - (void)dateBtnAction:(UIButton *)button
 {
     PGDatePickManager *datePickManager = [PGDatePickManager YEBStyle];
@@ -95,6 +101,7 @@
     };
 }
 
+#pragma mark - 添加数据
 - (void)addAction
 {
     MoneyAddViewController *vc = [[MoneyAddViewController alloc]init];
@@ -103,22 +110,9 @@
         [self filterAllModelArray];
     };
     [self.navigationController pushViewController:vc animated:true];
-
-//    for (NSInteger i = 1; i < 32; i++) {
-//
-//        SZMoneyModel *model = [[SZMoneyModel alloc]init];
-//        model.type = @"餐饮";
-//        model.cost = -13;
-//        if (i < 10) {
-//            model.insertTime = [NSString stringWithFormat:@"2019-01-0%ld",i];
-//        } else {
-//            model.insertTime = [NSString stringWithFormat:@"2019-01-%ld",i];
-//        }
-//        model.remark = @"午餐";
-//        [[SZMoneyManager defaultManager] add:model];
-//    }
 }
 
+#pragma mark - 统计头部
 - (void)countHeader
 {
     CGFloat totalIn = 0;
@@ -133,7 +127,7 @@
     [_headerView.resultBtn setTitle:[NSString stringWithFormat:@"结余\n%.2f",totalIn + totalOut] forState:UIControlStateNormal];
 }
 
-#pragma mark -
+#pragma mark - UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return _dataArray.count;
@@ -204,7 +198,7 @@
 
         MonthStatisticsViewController *vc = [[MonthStatisticsViewController alloc]init];
         vc.monthModelArray = array;
-        vc.inOut = true;
+        vc.costType = SZCostTypeOut;
         [self.navigationController pushViewController:vc animated:true];
     };
 
@@ -213,7 +207,7 @@
 
         MonthStatisticsViewController *vc = [[MonthStatisticsViewController alloc]init];
         vc.monthModelArray = array;
-        vc.inOut = false;
+        vc.costType = SZCostTypeIn;
         [self.navigationController pushViewController:vc animated:true];
     };
 
@@ -237,15 +231,5 @@
         make.left.top.right.bottom.equalTo(self.view);
     }];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -9,6 +9,11 @@
 #ifndef GlobalDefine_h
 #define GlobalDefine_h
 
+typedef enum : NSUInteger {
+    SZCostTypeIn,
+    SZCostTypeOut,
+} SZCostType;
+
 //公用的cell复用标识符
 static NSString * const CellReuseIdentifier = @"cellReuseIdentifier";
 

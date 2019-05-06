@@ -10,9 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+//每个月的统计饼状图
 @interface MonthStatisticsViewController : SZBaseViewController
 
-@property (nonatomic, assign) BOOL inOut;
+//来自收入:false
+//来自支出:true
+@property (nonatomic, assign) SZCostType costType;
+
+//有值:月统计
+//空值:年统计
 @property (nonatomic, strong) NSArray<SZMoneyModel *> *monthModelArray;
 
 @end
